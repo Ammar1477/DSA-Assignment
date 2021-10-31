@@ -1,0 +1,46 @@
+class empty(Exception):
+ pass
+
+class ArrayStack:
+    
+    def __init__(self):
+        self._data = []
+        
+    def __len__(self):
+        return len(self._data)
+    
+    def is_empty(self):
+        return len(self._data) == 0
+    
+    def push(self, e):
+        self._data.append(e)
+        
+    def top(self):
+        if self.is_empty():
+            raise empty('Stack is empty')
+        return self._data[-1]
+    
+    def pop(self):
+        if self.is_empty():
+            raise empty('Stack is empty')
+        return self._data.pop()
+
+a = ArrayStack()
+
+a.push(5)
+a.push(3)
+a.pop()
+a.push(2)
+a.push(8)
+a.pop()
+a.pop()
+a.push(9)
+a.push(1)
+a.pop()
+a.push(7)
+a.push(6)
+a.pop()
+a.pop()
+a.push(4)
+a.pop()
+a.pop()
